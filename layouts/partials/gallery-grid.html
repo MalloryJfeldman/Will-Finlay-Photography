@@ -1,0 +1,23 @@
+{{/* Expects "." to be a slice of gallery pages */}}
+<div class="grid">
+  {{ range . }}
+    {{ $gallery := . }}
+    {{ $cover := "" }}
+    {{ with .Params.cover }}
+      {{ $cover = $gallery.Resources.GetMatch . }}
+    {{ end }}
+    {{ $images := $gallery.Resources.ByType "image" }}
+    {{ if and (not $cover) (gt (len $images) 0) }}
+      {{ $cover = index $images 0 }}
+    {{ end }}
+    <a class="grid-item" href="{{ $gallery.RelPermalink }}">
+      {{ with $cover }}
+        {{ $img := .Resize "900x q75" }}
+        <img src="{{ $img.RelPermalink }}" alt="{{ $gallery.Title }}" loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}">
+      {{ end }}
+      <span class="overlay">
+        <span class="overlay-title">{{ $gallery.Title }}</span>
+      </span>
+    </a>
+  {{ end }}
+</div>

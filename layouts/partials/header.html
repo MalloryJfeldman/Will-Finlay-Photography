@@ -1,0 +1,24 @@
+<header class="site-header">
+  <span class="wordmark">{{ site.Title }}</span>
+  <nav class="main-nav">
+    <ul>
+      {{ range .Site.Menus.main }}
+        {{ if not .Parent }}
+          <li class="nav-item{{ if .Children }} has-children{{ end }}">
+            <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+            {{ if .Children }}
+              <ul class="submenu">
+                {{ range .Children }}
+                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>

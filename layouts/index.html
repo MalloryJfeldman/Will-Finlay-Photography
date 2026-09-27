@@ -1,0 +1,5 @@
+{{ define "main" }}
+  {{ $portfolio := site.GetPage "/portfolio" }}
+  {{ $galleries := $portfolio.RegularPagesRecursive.ByParam "weight" }}
+  {{ partial "gallery-grid.html" $galleries }}
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+  {{ $hero := .Resources.GetMatch (.Params.hero | default "hero.*") }}
+  <div class="about-hero">
+    {{ with $hero }}
+      {{ $img := .Resize "1800x q80" }}
+      <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+    {{ end }}
+    <div class="about-overlay">
+      <div class="about-text">
+        {{ .Content }}
+        {{ with .Params.contact_email }}
+          <a class="btn-contact" href="mailto:{{ . }}">Contact Me</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

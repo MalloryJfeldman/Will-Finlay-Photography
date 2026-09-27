@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <h1 class="page-title">{{ .Title }}</h1>
+  <div class="lightbox-grid">
+    {{ range .Resources.ByType "image" }}
+      {{ $full := .Resize "1800x q80" }}
+      {{ $thumb := .Resize "700x q75" }}
+      <a class="lightbox-item glightbox" href="{{ $full.RelPermalink }}" data-gallery="gallery-{{ $.File.ContentBaseName }}" data-title="{{ $.Title }}">
+        <img src="{{ $thumb.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}">
+      </a>
+    {{ end }}
+  </div>
+
+  {{ $siblings := .CurrentSection.RegularPages.ByParam "weight" }}
+  {{ $curIndex := -1 }}
+  {{ range $i, $p := $siblings }}
+    {{ if eq $p.RelPermalink $.RelPermalink }}{{ $curIndex = $i }}{{ end }}
+  {{ end }}
+  <nav class="gallery-pager">
+    {{ if gt $curIndex 0 }}
+      {{ $prev := index $siblings (sub $curIndex 1) }}
+      <a class="pager-prev" href="{{ $prev.RelPermalink }}">&larr; Previous: {{ $prev.Title }}</a>
+    {{ end }}
+    {{ if lt $curIndex (sub (len $siblings) 1) }}
+      {{ $next := index $siblings (add $curIndex 1) }}
+      <a class="pager-next" href="{{ $next.RelPermalink }}">Next: {{ $next.Title }} &rarr;</a>
+    {{ end }}
+  </nav>
+{{ end }}
