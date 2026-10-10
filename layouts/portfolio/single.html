@@ -4,7 +4,7 @@
     {{ range .Resources.ByType "image" }}
       {{ $full := .Resize "1800x q80" }}
       {{ $thumb := .Resize "700x q75" }}
-      <a class="lightbox-item glightbox" href="{{ $full.RelPermalink }}" data-gallery="gallery-{{ $.File.ContentBaseName }}" data-title="{{ $.Title }}">
+      <a class="lightbox-item glightbox" href="{{ $full.RelPermalink }}" data-gallery="gallery-{{ $.File.ContentBaseName }}">
         <img src="{{ $thumb.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}">
       </a>
     {{ end }}
