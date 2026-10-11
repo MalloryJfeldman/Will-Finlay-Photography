@@ -54,25 +54,21 @@ Edit `content/about.md`.
 In Terminal, type
 
 cd [drag and drop 'Will-Finlay-Photography-main' folder into Terminal]
-
-enter
+[enter]
 
 then type
 
 git add .
-
-enter
+[enter]
 
 then type
 
 git commit -m "[short description of updates]
-
-enter
+[enter]
 
 then type
 
 git push
-
-enter
+[enter]
 
 Github page should now show orange "pending" dot. After a minute, changes to green check. Refresh webpage, edits should be there.
