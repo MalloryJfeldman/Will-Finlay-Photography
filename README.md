@@ -48,3 +48,31 @@ Pushing to `main` automatically builds and deploys the site via GitHub Actions (
 ## Editing the About page
 
 Edit `content/about.md`.
+
+## Publishing changes to site
+
+In Terminal, type
+
+cd [drag and drop 'Will-Finlay-Photography-main' folder into Terminal]
+
+enter
+
+then type
+
+git add .
+
+enter
+
+then type
+
+git commit -m "[short description of updates]
+
+enter
+
+then type
+
+git push
+
+enter
+
+Github page should now show orange "pending" dot. After a minute, changes to green check. Refresh webpage, edits should be there.
