@@ -1,7 +1,7 @@
 ---
 title: "About"
 type: "about"
-hero: "hero.jpg"
+hero: "01-IcelandDay01-9518.jpg"
 contact_email: "will@willfinlay.com"
 ---
 
