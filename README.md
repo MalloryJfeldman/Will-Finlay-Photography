@@ -49,6 +49,22 @@ Pushing to `main` automatically builds and deploys the site via GitHub Actions (
 
 Edit `content/about.md`.
 
+## Viewing a live preview of local edits before publishing live on Github
+
+In Terminal, type
+
+cd [drag and drop 'Will-Finlay-Photography-main' folder into Terminal]
+[enter]
+
+then type
+
+hugo server -D
+[enter]
+
+once the command is done running, in your browser, go to http://localhost:1313/
+
+Any edits saved in the local files/folders will auto-update in this preview. Once edits are done, publish to Github (see below).
+
 ## Publishing changes to site
 
 In Terminal, type
