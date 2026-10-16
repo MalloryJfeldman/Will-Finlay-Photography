@@ -1,5 +1,5 @@
 <header class="site-header">
-  <span class="wordmark">{{ site.Title }}</span>
+  <a class="wordmark" href="{{ "/" | relURL }}">{{ site.Title }}</a>
   <nav class="main-nav">
     <ul>
       {{ range .Site.Menus.main }}

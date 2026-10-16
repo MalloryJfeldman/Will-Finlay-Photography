@@ -33,14 +33,6 @@ Don't drop full-resolution camera originals straight into the repo — Hugo resi
 - JPEG quality ~80–85% is plenty for web use.
 - Keep full-resolution originals somewhere else (external drive, cloud storage) — they don't need to be in this repo.
 
-## Local preview
-
-```bash
-hugo server -D
-```
-
-Then open http://localhost:1313. Pages reload automatically as you edit content or photos.
-
 ## Deployment
 
 Pushing to `main` automatically builds and deploys the site via GitHub Actions (`.github/workflows/hugo.yml`) to GitHub Pages.
@@ -53,12 +45,18 @@ Edit `content/about.md`.
 
 In Terminal, type
 
+```bash
 cd [drag and drop 'Will-Finlay-Photography-main' folder into Terminal]
+```
+ 
 [enter]
 
 then type
 
+```bash
 hugo server -D
+```
+
 [enter]
 
 once the command is done running, in your browser, go to http://localhost:1313/
@@ -69,22 +67,34 @@ Any edits saved in the local files/folders will auto-update in this preview. Onc
 
 In Terminal, type
 
+```bash
 cd [drag and drop 'Will-Finlay-Photography-main' folder into Terminal]
+```
+
 [enter]
 
 then type
 
+```bash
 git add .
+```
+
 [enter]
 
 then type
 
+```bash
 git commit -m "[short description of updates]
+```
+
 [enter]
 
 then type
 
-git push
+```bash
+git push 
+```
+
 [enter]
 
 Github page should now show orange "pending" dot. After a minute, changes to green check. Refresh webpage, edits should be there.
