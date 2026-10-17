@@ -1,6 +1,6 @@
 ---
 title: "Carolinas"
-date: 2020-10-01
+date: 2024-07-01
 weight: 1
 cover: "01-PisgahFall2021-8635.jpg"
 ---
